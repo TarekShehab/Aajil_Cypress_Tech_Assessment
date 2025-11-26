@@ -18,9 +18,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "git": "^0.1.5"
+    "git": "^0.1.5",
+    "mochawesome-report-generator": "^6.3.2"
   },
   "devDependencies": {
-    "cypress": "^15.7.0"
+    "cypress": "^15.7.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0"
   }
 }
