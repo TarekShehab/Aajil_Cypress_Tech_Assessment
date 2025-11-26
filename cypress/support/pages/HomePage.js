@@ -9,24 +9,51 @@ class HomePage {
     return Math.floor(Math.random() * ceiling)
   }
 
-  selectDepCity(deptCity){
-    if (deptCity === undefined){
-      let depCitiesOptionsCount;
+  selectDeptCity(deptCity){
+    
+    cy.get(depCityDropdown)
+    .then(($select) => {
+      const optionExists = $select.find(`option[value="${deptCity}"]`).length > 0;
 
-      // Get the count of options in departure cities drop down
-      cy.get(depCityDropdown).find('option').its('length').then((count) => {
-        depCitiesOptionsCount = count; 
-        cy.log(`Departure cities Count =========================> ${depCitiesOptionsCount} options.`);    
-      }).then(() => {
-        cy.get(depCityDropdown).select(this.getRandomNumberUpTo(depCitiesOptionsCount)) 
-      });
-    }
-    else{
-      cy.get(depCityDropdown).select(deptCity)
-    }
+      // If the user didn't give an input or gave an invalid input (doesn't exist in the dropdown)
+      if (!optionExists || deptCity === undefined) {
+        cy.log(` =========================> No/Invalid Departure City Selection`);    
+
+        let depCitiesOptionsCount;
+
+        // Get the count of options in departure cities drop down
+        cy.get(depCityDropdown).find('option').its('length').then((count) => {
+          depCitiesOptionsCount = count; 
+          cy.log(`Departure cities Count =========================> ${depCitiesOptionsCount} options.`);    
+        }).then(() => {
+          cy.get(depCityDropdown).select(this.getRandomNumberUpTo(depCitiesOptionsCount)) 
+        });
+      }
+      else{
+        cy.get(depCityDropdown).select(deptCity)
+      }
+    });
+
+
+
+
+    // if (deptCity === undefined){
+    //   let depCitiesOptionsCount;
+
+    //   // Get the count of options in departure cities drop down
+    //   cy.get(depCityDropdown).find('option').its('length').then((count) => {
+    //     depCitiesOptionsCount = count; 
+    //     cy.log(`Departure cities Count =========================> ${depCitiesOptionsCount} options.`);    
+    //   }).then(() => {
+    //     cy.get(depCityDropdown).select(this.getRandomNumberUpTo(depCitiesOptionsCount)) 
+    //   });
+    // }
+    // else{
+    //   cy.get(depCityDropdown).select(deptCity)
+    // }
   }
  
-  selectDestCity(desCity){
+  selectDesCity(desCity){
     if (desCity === undefined){
       let destCitiesOptionsCount;
 
