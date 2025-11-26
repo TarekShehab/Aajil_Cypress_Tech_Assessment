@@ -9,7 +9,7 @@ let flightSeq;
 
 describe('Book a flight', () => {
   
-  it('Use the following parameters for deptCity, desCity, and flightSeq: Boston, Berlin, 2', () => {
+  it('1- Use the following parameters for deptCity, desCity, and flightSeq: Boston, Berlin, 2', () => {
     
     deptCity = "Boston";
     desCity = "Berlin";
@@ -24,18 +24,18 @@ describe('Book a flight', () => {
 
   });
   
-  it('Use the following parameters for deptCity, desCity, and flightSeq: No inputs (all parameters random)', () => {
+  it('2- Use the following parameters for deptCity, desCity, and flightSeq: No inputs (all parameters random)', () => {
     
     cy.visit(Fixtures.SUT_Endpoint);
 
     //Book a flight
-    MasterPage.purchaseEndToEnd(deptCity, desCity, flightSeq);
+    MasterPage.purchaseEndToEnd();
 
     MasterPage.makeAssertions();
 
   });
   
-  it('Use the following parameters for deptCity, desCity, and flightSeq: Boston, Boston, 1', () => {
+  it('3- Use the following parameters for deptCity, desCity, and flightSeq: Boston, Boston, 1', () => {
     
     deptCity = "Boston";
     desCity = "Boston";
@@ -50,7 +50,7 @@ describe('Book a flight', () => {
 
   });
   
-  it('Use the following parameters for deptCity, desCity, and flightSeq: Paris, Berlin, 0', () => {
+  it('4- Use the following parameters for deptCity, desCity, and flightSeq: Paris, Berlin, 0', () => {
     
     deptCity = "Paris";
     desCity = "Berlin";
@@ -65,7 +65,7 @@ describe('Book a flight', () => {
 
   });
   
-  it('Use the following parameters for deptCity, desCity, and flightSeq: Choose any inputs of your choice', () => {
+  it('5- Use the following parameters for deptCity, desCity, and flightSeq: Choose any inputs of your choice', () => {
     
     deptCity = "Mexico City";
     desCity = "New York";
