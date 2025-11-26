@@ -2,6 +2,14 @@
   "name": "aajil_cypress_tech_assessment",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/TarekShehab/Aajil_Cypress_Tech_Assessment#readme",
+  "bugs": {
+    "url": "https://github.com/TarekShehab/Aajil_Cypress_Tech_Assessment/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarekShehab/Aajil_Cypress_Tech_Assessment.git"
+  },
   "license": "ISC",
   "author": "",
   "type": "commonjs",
@@ -9,10 +17,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "cypress": "^15.7.0"
-  },
   "dependencies": {
     "git": "^0.1.5"
+  },
+  "devDependencies": {
+    "cypress": "^15.7.0"
   }
 }
