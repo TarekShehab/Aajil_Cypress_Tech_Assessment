@@ -23,15 +23,15 @@ class FlightsResultsPage {
         flightsAvailableCount = count-1; 
         cy.log(`Result Flights Count =========================> ${flightsAvailableCount} options.`);    
       }).then(() => {
-        flightIndex = this.getRandomNumberUpTo(flightsAvailableCount);
-        cy.log("choosen index ==========> " + choosenflightButton);
+        flightIndex = this.getRandomNumberUpTo(flightsAvailableCount-1);
+        cy.log("choosen index ==========> " + flightIndex);
         cy.get(flightsButtons).eq(flightIndex).click();
         //click Choose Flight 
       });
     }
     else{
       flightIndex = flightSeq;
-      cy.log("choosen index ==========> " + choosenflightButton);
+      cy.log("choosen index ==========> " + flightIndex);
       cy.get(flightsButtons).eq(flightIndex).click();
       //click Choose Flight
     }
