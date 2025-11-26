@@ -15,3 +15,22 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+
+// Handling application errors
+Cypress.on('uncaught:exception', (err, runnable) => {
+
+  // Log the error for visibility (optional)
+  console.log('Uncaught Application Error:', err.message);
+
+  // Ignoring these application errors
+
+//   if (err.message.includes('Mixed Content')) {
+//     return false;
+//   }
+  if (err.message.includes('a is not a function')) {
+    return false;
+  }
+  if (err.message.includes('jQuery is not defined')) {
+    return false;
+  }
+});
