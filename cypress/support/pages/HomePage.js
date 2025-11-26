@@ -3,11 +3,6 @@ const depCityDropdown = "select[name='fromPort']"
 const destCityDropdown = "select[name='toPort']"
 const findFlightButton = "input[type='submit']"
 
-
-
-// const DROPDOWN_ID = '[data-cy="product-count-dropdown"]';
-
-
 class HomePage {
   
   getRandomNumberUpTo(ceiling){
@@ -52,15 +47,6 @@ class HomePage {
     cy.get(findFlightButton).click()
   }
 
-
-
-  /*
-  login(username, password) {
-    this.usernameInput.type(username);
-    this.passwordInput.type(password);
-    this.submitButton.click();
-  */
 }
 
-// Export an instance of the class
 export default new HomePage();

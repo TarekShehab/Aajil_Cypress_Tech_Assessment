@@ -1,16 +1,13 @@
 
-
-const flightsTable = "table.table"
-
-let flightIndex
-const flightsButtons = "input[type='submit']"
-let choosenflightButton
-
+// Web elements selectors
+const flightsTable = "table.table";
+const flightsButtons = "input[type='submit']";
+let flightIndex;
 
 class FlightsResultsPage {
 
   getRandomNumberUpTo(ceiling){
-    return Math.floor(Math.random() * ceiling)
+    return Math.floor(Math.random() * ceiling);
   }
 
   chooseFlight(flightSeq){
@@ -26,17 +23,14 @@ class FlightsResultsPage {
         flightIndex = this.getRandomNumberUpTo(flightsAvailableCount-1);
         cy.log("choosen index ==========> " + flightIndex);
         cy.get(flightsButtons).eq(flightIndex).click();
-        //click Choose Flight 
       });
     }
     else{
       flightIndex = flightSeq;
       cy.log("choosen index ==========> " + flightIndex);
       cy.get(flightsButtons).eq(flightIndex).click();
-      //click Choose Flight
     }
   }
 }
 
-// Export an instance of the class
 export default new FlightsResultsPage();
