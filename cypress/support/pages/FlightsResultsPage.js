@@ -11,7 +11,9 @@ class FlightsResultsPage {
   }
 
   chooseFlight(flightSeq){
-    if (flightSeq === undefined){
+
+    // If the user didn't give an input or gave an invalid input (<=0)
+    if (flightSeq === undefined || flightSeq <= 0){
       let flightsAvailableCount;
 
       // Get the count of options in departure cities drop down
@@ -22,11 +24,13 @@ class FlightsResultsPage {
       }).then(() => {
         flightIndex = this.getRandomNumberUpTo(flightsAvailableCount-1);
         cy.log("choosen index ==========> " + flightIndex);
+        cy.wait(2000);
+
         cy.get(flightsButtons).eq(flightIndex).click();
       });
     }
     else{
-      flightIndex = flightSeq;
+      flightIndex = flightSeq-1; //indexing starts from 0
       cy.log("choosen index ==========> " + flightIndex);
       cy.get(flightsButtons).eq(flightIndex).click();
     }
