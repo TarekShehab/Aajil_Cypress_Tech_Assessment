@@ -33,6 +33,7 @@ class PurchaseConfirmationPage {
   
   }
   
+  // Helper function that converts the amount from a string with the currency to a number that we can compare to other numbers
   extractAmountNumber(amountString) {
 
     const parts = amountString.split(' ');

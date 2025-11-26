@@ -13,7 +13,6 @@ const nameOnCardInput = "#nameOnCard";
 const rememberMeCheckBox = "#rememberMe";
 const purchaseButton = "input.btn-primary";
 
-
 class FlightPurchasePage {
   
   // Generate a random string
@@ -37,6 +36,7 @@ class FlightPurchasePage {
 
   //Populate all input fields in the page with random strings
   populateAndPurchase() {
+
     cy.get(nameInput).type(this.generateRandomString());
     cy.get(addressInput).type(this.generateRandomString());
     cy.get(cityInput).type(this.generateRandomString());
@@ -50,21 +50,9 @@ class FlightPurchasePage {
     cy.get(rememberMeCheckBox).check();
 
     cy.get(purchaseButton).click();
+
   }
-
-
-
-  
-  
-
-
-
-
-
-
-
 
 }
 
-// Export an instance of the class
 export default new FlightPurchasePage();

@@ -1,14 +1,12 @@
 
+import HomePage from '../pages/HomePage.js'; 
+
 // Web elements selectors
 const flightsTable = "table.table";
 const flightsButtons = "input[type='submit']";
 let flightIndex;
 
 class FlightsResultsPage {
-
-  getRandomNumberUpTo(ceiling){
-    return Math.floor(Math.random() * ceiling);
-  }
 
   chooseFlight(flightSeq){
 
@@ -22,10 +20,8 @@ class FlightsResultsPage {
         flightsAvailableCount = count-1; 
         cy.log(`Result Flights Count =========================> ${flightsAvailableCount} options.`);    
       }).then(() => {
-        flightIndex = this.getRandomNumberUpTo(flightsAvailableCount-1);
+        flightIndex = HomePage.getRandomNumberUpTo(flightsAvailableCount-1);
         cy.log("choosen index ==========> " + flightIndex);
-        cy.wait(2000);
-
         cy.get(flightsButtons).eq(flightIndex).click();
       });
     }
@@ -34,7 +30,9 @@ class FlightsResultsPage {
       cy.log("choosen index ==========> " + flightIndex);
       cy.get(flightsButtons).eq(flightIndex).click();
     }
+
   }
+  
 }
 
 export default new FlightsResultsPage();
