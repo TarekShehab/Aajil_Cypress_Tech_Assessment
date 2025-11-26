@@ -1,5 +1,6 @@
 // Import page objects
 import HomePage from '../support/pages/HomePage.js'; 
+import FlightsResultsPage from '../support/pages/FlightsResultsPage.js'; 
 
 const SUT_Endpoint = "https://blazedemo.com/"
 
@@ -12,6 +13,7 @@ describe('Find Flights', () => {
     HomePage.selectDestCity();
     HomePage.clickFindFlights();
 
+    FlightsResultsPage.chooseFlight();
 
   });
 });
