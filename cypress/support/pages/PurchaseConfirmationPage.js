@@ -7,15 +7,15 @@ class PurchaseConfirmationPage {
   
   getStatusCell() {
    
-    const status = cy.get(statusCell)
-    return status
+    const status = cy.get(statusCell);
+    return status;
   
   }
   
   getAmountCell() {
     
-    const status = cy.get(amountCell)
-    return status
+    const status = cy.get(amountCell);
+    return status;
   
   }
   
@@ -25,10 +25,8 @@ class PurchaseConfirmationPage {
     .invoke('text')
     .then(text => {
       const trimmedAmountText = text.trim();
-      cy.log(`Trimmed amount text value ================> ${trimmedAmountText}`);
       const amountNumber = this.extractAmountNumber(trimmedAmountText);
-      cy.log(`Extracted Amount text value ================> ${amountNumber}`);
-      expect(amountNumber).to.be.greaterThan(minAmount)
+      expect(amountNumber).to.be.greaterThan(minAmount);
     })
   
   }
@@ -37,13 +35,8 @@ class PurchaseConfirmationPage {
   extractAmountNumber(amountString) {
 
     const parts = amountString.split(' ');
-    cy.log("Parts ===========> " + parts);
-  
-    const numericString = parts[0];
-    cy.log("Numeric String ===========> " + numericString);
-  
+    const numericString = parts[0];    
     const result = parseInt(numericString);
-    cy.log( "Extract Number ===========> " + result);
 
     return result;
 

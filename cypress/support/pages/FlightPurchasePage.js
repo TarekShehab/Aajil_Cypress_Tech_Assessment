@@ -29,7 +29,6 @@ class FlightPurchasePage {
       result += characters.charAt(randomIndex);
     }
     
-    cy.log("Random string ===============>" + result);
     return result;
 
   }
