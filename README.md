@@ -1,9 +1,9 @@
 # Aajil_Cypress_Tech_Assessment
 
 ## Summary
-This project is for a technical assessment to showcase my experience in thest automation.
+This project is for a technical assessment to showcase my experience in test automation.
 
-The project is a cypress project following the page objects design pattern. Four pages are included in the project to test the [SUT](https://blazedemo.com/) in addition to a master page that incorporates all other pages.
+The tool of choice was Cypress. The project is following the page objects design pattern. Four pages are included in the project to test the [SUT](https://blazedemo.com/) in addition to a master page that incorporates all other pages.
 
 
 
