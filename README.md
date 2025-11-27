@@ -24,6 +24,8 @@ The project is a cypress project following the page objects design pattern. Four
 
     ``` npx cypress run --browser chrome ```
 
+    Note: you can add `--headded` at the end in the last command if you want to see the run while int's in progress instead of it running in the back ground
+
 
 
 ### Assumptions & Notes
