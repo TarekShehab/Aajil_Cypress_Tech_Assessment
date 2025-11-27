@@ -29,6 +29,6 @@ The project is a cypress project following the page objects design pattern. Four
 
 
 ### Assumptions & Notes
-- I assumed if the user gives the flightSeq as a number smaller than or equals 0, then the function should assign a random positive number as the user input is invalid
 - I assumed if the user gives the depCity, or desCity that is not available in the dropdown list, then the function should assign a random city from the options in the dropdown
+- I assumed if the user gives an invalid flightSeq (`<= 0` or `> Flights Count`), then the function should assign a random valid index number as the user input is invalid
 - The task document can be found in this repo under the file name `TaskSpecs.pdf`
