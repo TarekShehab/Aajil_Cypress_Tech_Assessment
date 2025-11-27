@@ -8,29 +8,56 @@ let flightIndex;
 
 class FlightsResultsPage {
 
+  // chooseFlight(flightSeq){
+
+  //   // If the user didn't give an input or gave an invalid input (<=0)
+  //   if (flightSeq === undefined || flightSeq <= 0){
+  //     let flightsAvailableCount;
+
+  //     // Get the count of options in departure cities drop down
+  //     cy.get(flightsTable).find('tr').its('length').then((count) => {
+  //       // we subtract 1 because first row is just the table's header
+  //       flightsAvailableCount = count-1; 
+  //       cy.log(`Result Flights Count =========================> ${flightsAvailableCount} options.`);    
+  //     }).then(() => {
+  //       flightIndex = HomePage.getRandomNumberUpTo(flightsAvailableCount-1);
+  //       cy.log("choosen index ==========> " + flightIndex);
+  //       cy.get(flightsButtons).eq(flightIndex).click();
+  //     });
+  //   }
+  //   else{
+  //     flightIndex = flightSeq-1; //indexing starts from 0
+  //     cy.log("choosen index ==========> " + flightIndex);
+  //     cy.get(flightsButtons).eq(flightIndex).click();
+  //   }
+
+  // }
   chooseFlight(flightSeq){
 
-    // If the user didn't give an input or gave an invalid input (<=0)
-    if (flightSeq === undefined || flightSeq <= 0){
-      let flightsAvailableCount;
+    let flightsAvailableCount;
 
-      // Get the count of options in departure cities drop down
-      cy.get(flightsTable).find('tr').its('length').then((count) => {
-        // we subtract 1 because first row is just the table's header
-        flightsAvailableCount = count-1; 
-        cy.log(`Result Flights Count =========================> ${flightsAvailableCount} options.`);    
-      }).then(() => {
+    // Get the count of the flight results
+    cy.get(flightsTable).find('tr').its('length').then((count) => {
+      // we subtract 1 because first row is just the table's header
+      flightsAvailableCount = count-1; 
+      cy.log(`Result Flights Count =========================> ${flightsAvailableCount} options.`);    
+    }).then(() => {
+      
+      // If the user didn't give an input or gave an invalid input (<=0 or > results count)
+      if (flightSeq === undefined || flightSeq <= 0 || flightSeq > flightsAvailableCount){
         flightIndex = HomePage.getRandomNumberUpTo(flightsAvailableCount-1);
         cy.log("choosen index ==========> " + flightIndex);
         cy.get(flightsButtons).eq(flightIndex).click();
-      });
-    }
-    else{
-      flightIndex = flightSeq-1; //indexing starts from 0
-      cy.log("choosen index ==========> " + flightIndex);
-      cy.get(flightsButtons).eq(flightIndex).click();
-    }
+      }
+      else{
+        flightIndex = flightSeq-1; //indexing starts from 0
+        cy.log("choosen index ==========> " + flightIndex);
+        cy.get(flightsButtons).eq(flightIndex).click();
 
+      }
+      
+    });
+    
   }
   
 }
