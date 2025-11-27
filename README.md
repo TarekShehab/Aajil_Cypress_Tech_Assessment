@@ -1,4 +1,4 @@
-# Aajil | Cypress Technical Assessment
+# Aajil | Technical Assessment | Cypress Project
 
 ## Summary
 This project is for a technical assessment to showcase my experience in thest automation.
