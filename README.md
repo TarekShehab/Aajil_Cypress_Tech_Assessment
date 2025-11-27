@@ -32,3 +32,4 @@ The tool of choice was Cypress. The project is following the page objects design
 - I assumed if the user gives the depCity, or desCity that is not available in the dropdown list, then the function should assign a random city from the options in the dropdown
 - I assumed if the user gives an invalid flightSeq (`<= 0` or `> Flights Count`), then the function should assign a random valid index number as the user input is invalid
 - The task document can be found in this repo under the file name `TaskSpecs.pdf`
+- I've designed the `selectDeptCity` & `selectDesCity` functions to handle integer parameters as well as strings as the `select` function in cypress accepts both 
